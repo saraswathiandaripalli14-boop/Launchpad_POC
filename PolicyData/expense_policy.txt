@@ -1,0 +1,3 @@
+Employees can claim travel reimbursement for official trips.
+Hotel and transport expenses will be reimbursed.
+Food expenses are capped at 500 per day.
