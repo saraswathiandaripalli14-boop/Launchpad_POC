@@ -3,11 +3,17 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import FakeEmbeddings
 from langchain.chains import RetrievalQA
 from utils.llm_config import get_llm
-
+import os
 def create_rag_chain(chunks):
     embeddings = FakeEmbeddings(size=384)
 
     vectorstore = FAISS.from_documents(chunks, embeddings)
+    
+    # it save the data into vectorstore
+     
+    os.makedirs("Vectorstore", exist_ok=True)
+    vectorstore.save_local("Vectorstore")
+
 
     retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
 

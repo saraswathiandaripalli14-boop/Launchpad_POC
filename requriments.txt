@@ -1,0 +1,29 @@
+
+# UI Framework
+
+streamlit==1.35.0
+
+# -----------------------------
+
+# LangChain Core & Integrations
+
+langchain==0.2.14
+langchain-community==0.2.12
+langchain-openai==0.1.22
+langchain-text-splitters==0.2.2
+
+
+# -----------------------------
+# Vector Database
+
+faiss-cpu==1.8.0
+
+# -----------------------------
+
+# Environment Variable Support
+
+python-dotenv==1.0.1
+
+# for pdf data we need to install
+
+pypdf==4.2.0
