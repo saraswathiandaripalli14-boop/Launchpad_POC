@@ -5,7 +5,11 @@ from langchain.chains import RetrievalQA
 from utils.llm_config import get_llm
 import os
 def create_rag_chain(chunks):
+    #8th embeddings created 
+
     embeddings = FakeEmbeddings(size=384)
+
+    # 9th each embedding stored into vector database that is FAISS(in memory)
 
     vectorstore = FAISS.from_documents(chunks, embeddings)
     
