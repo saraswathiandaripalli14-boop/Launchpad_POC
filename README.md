@@ -1,4 +1,4 @@
-📄 Company Policy Q&A Bot (RAG POC) 
+ Company Policy Q&A Bot (RAG POC) 
 
 1. Overview 
 
@@ -8,19 +8,19 @@ It answers user questions only from company policy documents (Leave, Work From H
 
 The bot: 
 
-✅ Loads policy documents from text files 
+      Loads policy documents from text files 
 
-✅ Splits them into chunks 
+      Splits them into chunks 
 
-✅ Converts chunks into embeddings 
+      Converts chunks into embeddings 
 
-✅ Stores embeddings in a vector database (FAISS) 
+      Stores embeddings in a vector database (FAISS) 
 
-✅ Retrieves the most relevant content for a user query 
+      Retrieves the most relevant content for a user query 
 
-✅ Uses an LLM to generate grounded answers 
+      Uses an LLM to generate grounded answers 
 
-❌ Does not answer questions outside the provided documents 
+      Does not answer questions outside the provided documents 
 
  
 
@@ -106,7 +106,7 @@ What is the company salary structure?
 
     │ 
 
-     ├── utils/ 
+    ├── utils/ 
 
      │   ├── __init__.py 
 
@@ -274,4 +274,4 @@ Internal HR policy assistants
 
  
 
-✅ Status: Working and GitHub-synced 
+ Status: Working and GitHub-synced 
