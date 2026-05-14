@@ -168,9 +168,9 @@ Step 3: Install Dependencies
 
         python-dotenv==1.0.1 
 
-        for pdf data we need to install 
+        for text data we need to install 
 
-        pypdf==4.2.0 
+        TextLoader==4.2.0 
 
 
 
