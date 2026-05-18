@@ -18,13 +18,13 @@ if "documents" not in st.session_state:
     # and store in below line this happens only once, not on every question
    
     st.session_state.documents = load_documents("policydata")
-
+#all policy data is stored in documents
 documents = st.session_state.documents
-
+#takes input 
 query = st.text_input("Ask a policy question:")
 
 if query:
-    q = query.lower()
+    q = query.lower() #query is converted into lower to avoid case sensitive issues
 
    
     # DETERMINISTIC POLICY ROUTING (KEY FIX)
@@ -46,20 +46,22 @@ if query:
     # this for handling OUT-OF-CONTEXT data
    
     if not filtered_docs:
+        #prevent hallucination
         st.warning("I could not find this information in the provided documents.")
     else:
         chunks = split_documents(filtered_docs)
         qa_chain = create_rag_chain(chunks)
 
-        #10th quesry converted into embeddings and search data in FAISS it retrieved only relevent chunks from vector DB
+        #10th quesry converted into embeddings and search data in FAISS 
+        # it retrieved only relevent chunks from vector DB
         #11th that chunks give to the LLM that generated a answer to use
 
         #this line run the chain which the code in rag_chain.py
         #when user ask a question the query is send to rag_chain
         result = qa_chain(query)
 
-        #12th this will display the answer
-        
+        #12th this will display the generated answer
+         
         st.success("Answer:")
         st.write(result.get("result", ""))
 

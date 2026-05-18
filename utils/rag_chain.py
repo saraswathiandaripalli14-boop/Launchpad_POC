@@ -5,7 +5,7 @@ from langchain.chains import RetrievalQA
 from utils.llm_config import get_llm
 import os
 def create_rag_chain(chunks):
-    #8th embeddings created 
+    #8th embeddings created / converts text into numbers(vectors)
 
     embeddings = FakeEmbeddings(size=384)
 
@@ -19,6 +19,7 @@ def create_rag_chain(chunks):
     vectorstore.save_local("Vectorstore")
 
     #creates a retriever interface (it know how to :take query,find similar vectors,return relevant chunks)
+    # finds top 2 relevant chunks
     retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
 
     llm = get_llm()

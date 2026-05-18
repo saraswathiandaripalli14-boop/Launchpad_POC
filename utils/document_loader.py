@@ -10,7 +10,7 @@ def load_documents(data_path="policydata"):
             # and create Langchain documents Object 
             loader = TextLoader(os.path.join(data_path, file))
             docs = loader.load()
-        #4th all policy documents are loaded into memory
+        #4th all policy documents are loaded into memory /it is for routing 
             for d in docs:
                 d.metadata["policy_type"] = file.lower()   
                 d.metadata["source"] = file              
